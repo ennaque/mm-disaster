@@ -119,7 +119,7 @@ let config = {
         'styled-components': 'StyledComponents',
     },
     output: {
-        devtoolNamespace: PLUGIN_ID,
+        devtoolNamespace: 'testpl',
         path: path.join(__dirname, '/dist'),
         publicPath: '/',
         filename: 'main.js',

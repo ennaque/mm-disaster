@@ -114,20 +114,7 @@
     "webpack-dev-server": "4.7.2"
   },
   "scripts": {
-    "build": "webpack --mode=production --stats-error-details",
-    "build:watch": "webpack --mode=production --watch",
-    "debug": "webpack --mode=development",
-    "debug:watch": "webpack --mode=development --watch",
-    "dev-server": "webpack serve --mode=development",
-    "lint": "eslint --ignore-pattern node_modules --ignore-pattern dist --ext .js --ext .jsx --ext tsx --ext ts . --quiet --cache",
-    "fix": "eslint --ignore-pattern node_modules --ignore-pattern dist --ext .js --ext .jsx --ext tsx --ext ts . --quiet --fix --cache",
-    "test": "jest --forceExit --detectOpenHandles --verbose",
-    "test:watch": "jest --watch",
-    "test-ci": "jest --ci --forceExit --detectOpenHandles --maxWorkers=2",
-    "check-types": "tsc",
-    "extract": "formatjs extract \"src/**/*.{ts,tsx}\" --ignore \"**/*.d.ts\" --id-interpolation-pattern '[sha512:contenthash:base64:6]' --format simple --out-file i18n/en.json",
-    "graphql": "graphql-codegen --config graphql_gen.ts",
-    "report-unused-exports": "ts-prune"
+    "build": "webpack --mode=production --stats-error-details"
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -170,8 +157,5 @@
       "jest-canvas-mock"
     ],
     "testURL": "http://localhost:8065"
-  },
-  "jest-junit": {
-    "output": "build/test-results.xml"
   }
 }
