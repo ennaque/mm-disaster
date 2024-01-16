@@ -5,14 +5,14 @@ import {hidePostMenuModal} from 'src/actions';
 
 import {isPostMenuModalVisible} from 'src/selectors';
 
-import UpgradeModal from 'src/components/backstage/upgrade_modal';
+import DisasterConfirmationModal from './backstage/disaster_confirmation_modal';
 
 const PostMenuModal = () => {
     const dispatch = useDispatch();
     const show = useSelector(isPostMenuModalVisible);
 
     return (
-        <UpgradeModal
+        <DisasterConfirmationModal
             show={show}
             onHide={() => dispatch(hidePostMenuModal())}
         />

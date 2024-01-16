@@ -1,61 +1,17 @@
 import {combineReducers} from 'redux';
 
 import {
-    HIDE_CHANNEL_ACTIONS_MODAL,
-    HIDE_PLAYBOOK_ACTIONS_MODAL,
-    HIDE_POST_MENU_MODAL,
-    HIDE_RUN_ACTIONS_MODAL,
-    HidePlaybookActionsModal,
-    HidePostMenuModal,
-    HideRunActionsModal,
-    SHOW_CHANNEL_ACTIONS_MODAL,
-    SHOW_PLAYBOOK_ACTIONS_MODAL,
-    SHOW_POST_MENU_MODAL,
-    SHOW_RUN_ACTIONS_MODAL,
-    ShowChannelActionsModal,
-    ShowPlaybookActionsModal,
-    ShowPostMenuModal,
-    ShowRunActionsModal,
+    HIDE_DISASTER_MODAL,
+    HideDisasterModal,
+    SHOW_DISASTER_MODAL,
+    ShowDisasterModal,
 } from 'src/types/actions';
 
-const postMenuModalVisibility = (state = false, action: ShowPostMenuModal | HidePostMenuModal) => {
+const disasterModalVisibility = (state = false, action: ShowDisasterModal | HideDisasterModal) => {
     switch (action.type) {
-    case SHOW_POST_MENU_MODAL:
+    case SHOW_DISASTER_MODAL:
         return true;
-    case HIDE_POST_MENU_MODAL:
-        return false;
-    default:
-        return state;
-    }
-};
-
-const channelActionsModalVisibility = (state = false, action: ShowChannelActionsModal) => {
-    switch (action.type) {
-    case SHOW_CHANNEL_ACTIONS_MODAL:
-        return true;
-    case HIDE_CHANNEL_ACTIONS_MODAL:
-        return false;
-    default:
-        return state;
-    }
-};
-
-const runActionsModalVisibility = (state = false, action: ShowRunActionsModal | HideRunActionsModal) => {
-    switch (action.type) {
-    case SHOW_RUN_ACTIONS_MODAL:
-        return true;
-    case HIDE_RUN_ACTIONS_MODAL:
-        return false;
-    default:
-        return state;
-    }
-};
-
-const playbookActionsModalVisibility = (state = false, action: ShowPlaybookActionsModal | HidePlaybookActionsModal) => {
-    switch (action.type) {
-    case SHOW_PLAYBOOK_ACTIONS_MODAL:
-        return true;
-    case HIDE_PLAYBOOK_ACTIONS_MODAL:
+    case HIDE_DISASTER_MODAL:
         return false;
     default:
         return state;
@@ -63,12 +19,9 @@ const playbookActionsModalVisibility = (state = false, action: ShowPlaybookActio
 };
 
 const reducer = combineReducers({
-    postMenuModalVisibility,
-    channelActionsModalVisibility,
-    runActionsModalVisibility,
-    playbookActionsModalVisibility,
+    disasterModalVisibility,
 });
 
 export default reducer;
 
-export type PlaybooksPluginState = ReturnType<typeof reducer>;
+export type MMDisasterPluginState = ReturnType<typeof reducer>;

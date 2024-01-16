@@ -9,7 +9,7 @@ import {Channel} from '@mattermost/types/channels';
 
 import {FormattedMessage} from 'react-intl';
 
-import PlaybookRunPostMenuIcon from 'src/components/assets/icons/post_menu_icon';
+import DisasterPostMenuIcon from 'src/components/assets/icons/post_menu_icon';
 
 import {showPostMenuModal} from 'src/actions';
 import {Post} from '@mattermost/types/posts';
@@ -18,7 +18,7 @@ interface Props {
     postId: string;
 }
 
-export const StartPlaybookRunPostMenu = (props: Props) => {
+export const StartDisasterPostMenu = (props: Props) => {
     const dispatch = useDispatch();
     const channel = useSelector<GlobalState, Channel | null>((state) => {
         const post = getPost(state, props.postId);
@@ -35,7 +35,6 @@ export const StartPlaybookRunPostMenu = (props: Props) => {
     }
 
     const handleClick = () => {
-        console.log(message);
         window.localStorage.setItem('disaster_post_id', message?.id as string);
         window.localStorage.setItem('disaster_post_text', message?.message as string);
         dispatch(showPostMenuModal());
@@ -49,12 +48,11 @@ export const StartPlaybookRunPostMenu = (props: Props) => {
                 onClick={handleClick}
             >
                 <button
-                    data-testid='playbookRunPostMenuIcon'
                     className='style--none'
                     role='presentation'
                 >
-                    <PlaybookRunPostMenuIcon/>
-                    <FormattedMessage defaultMessage='Make disaster'/>
+                    <DisasterPostMenuIcon/>
+                    <FormattedMessage defaultMessage='Create a disaster'/>
                 </button>
             </li>
         </React.Fragment>

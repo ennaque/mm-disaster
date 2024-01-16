@@ -8,11 +8,11 @@ DEFAULT_GOARCH := $(shell go env GOARCH)
 
 export GO111MODULE=on
 
-BUNDLE_NAME ?= testpl.tar.gz
+BUNDLE_NAME ?= mm-disaster3.tar.gz
 
 .PHONY: server
 server:
-	cd server && env CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GO) build $(GO_BUILD_FLAGS) $(GO_BUILD_GCFLAGS) -trimpath -o dist/plugin-linux-amd64;
+	cd server && env CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GO) build $(GO_BUILD_FLAGS) $(GO_BUILD_GCFLAGS) -trimpath -o dist/mm-disaster;
 
 .PHONY: webapp
 webapp: webapp/node_modules
@@ -30,7 +30,7 @@ bundle:
 	cp -r webapp/dist dist/webapp/
 
 	cp plugin.json dist
-	cd dist && COPYFILE_DISABLE=1 tar -cvzf $(BUNDLE_NAME) --exclude=./*.gz .
+	cd dist && COPYFILE_DISABLE=1 tar -cvzf ../$(BUNDLE_NAME) --exclude=./*.gz .
 
 .PHONY: dist
 dist:	server webapp bundle

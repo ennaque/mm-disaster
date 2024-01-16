@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 import GenericModal from 'src/components/widgets/generic_modal';
 
-import UpgradeModalHeader from 'src/components/backstage/upgrade_modal_header';
+import DisasterConfirmationModalHeader from 'src/components/backstage/disaster_confirmation_modal_header';
 
 interface Props {
     show: boolean;
     onHide: () => void;
 }
 
-const UpgradeModal = (props: Props) => {
+const DisasterConfirmationModal = (props: Props) => {
     const postText = window.localStorage.getItem('disaster_post_text');
 
     return (
@@ -21,7 +21,7 @@ const UpgradeModal = (props: Props) => {
             onHide={props.onHide}
         >
             <Content>
-                <UpgradeModalHeader
+                <DisasterConfirmationModalHeader
                     titleText='Are you sure to create disaster from message?'
                     mainText={postText}
                 />
@@ -58,4 +58,4 @@ const SizedGenericModal = styled(GenericModal)`
     }
 `;
 
-export default UpgradeModal;
+export default DisasterConfirmationModal;

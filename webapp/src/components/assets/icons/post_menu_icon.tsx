@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PlaybookRunPostMenuIcon = () => (
+const DisasterPostMenuIcon = () => (
     <span className='MenuItem__icon'>
         <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -14,4 +14,4 @@ const PlaybookRunPostMenuIcon = () => (
     </span>
 );
 
-export default PlaybookRunPostMenuIcon;
+export default DisasterPostMenuIcon;

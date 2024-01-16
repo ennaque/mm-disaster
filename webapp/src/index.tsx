@@ -6,7 +6,7 @@ import {Channel} from '@mattermost/types/channels';
 import {GlobalSelectStyle} from 'src/components/backstage/styles';
 import {pluginId} from 'src/manifest';
 import {ChannelHeaderButton, ChannelHeaderText, ChannelHeaderTooltip} from 'src/components/channel_header';
-import {StartPlaybookRunPostMenu} from 'src/components/post_menu';
+import {StartDisasterPostMenu} from 'src/components/post_menu';
 import PostMenuModal from 'src/components/post_menu_modal';
 import reducer from 'src/reducer';
 
@@ -16,7 +16,7 @@ export default class Plugin {
 
     doRegistrations(registry: any): void {
         registry.registerReducer(reducer);
-        registry.registerPostDropdownMenuComponent(StartPlaybookRunPostMenu); // message menu button
+        registry.registerPostDropdownMenuComponent(StartDisasterPostMenu); // message menu button
         registry.registerChannelHeaderButtonAction(ChannelHeaderButton, (channel: Channel) => window.open('https://infra.skyeng.ru?channelId=' + channel.id, '_blank'), ChannelHeaderText, ChannelHeaderTooltip); // channel header button
         registry.registerRootComponent(PostMenuModal);
     }

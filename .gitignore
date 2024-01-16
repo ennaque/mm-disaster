@@ -2,6 +2,7 @@
 report.xml
 bin/
 dist/
+mm-disaster.tar.gz
 
 # Mac
 .DS_Store

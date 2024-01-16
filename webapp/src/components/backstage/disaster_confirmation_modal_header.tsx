@@ -9,7 +9,7 @@ interface Props {
     mainText: React.ReactNode;
 }
 
-const UpgradeModalHeader = (props: Props) => {
+const DisasterConfirmationModalHeader = (props: Props) => {
     return (
         <Header>
             <Title>{props.titleText}</Title>
@@ -44,5 +44,5 @@ const Title = styled(CenteredRow)`
     color: rgba(var(--center-channel-color-rgb), 1);
 `;
 
-export default UpgradeModalHeader;
+export default DisasterConfirmationModalHeader;
 

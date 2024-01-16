@@ -1,10 +1,10 @@
 import React, {ElementRef, useRef} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import PlaybooksProductIcon from 'src/components/assets/icons/playbooks_product_icon';
+import DisasterIcon from 'src/components/assets/icons/disaster_icon';
 
 export const ChannelHeaderButton = () => {
-    const myRef = useRef<ElementRef<typeof PlaybooksProductIcon>>(null);
+    const myRef = useRef<ElementRef<typeof DisasterIcon>>(null);
 
     // If it has been mounted, we know our parent is always a button.
     const parent = myRef?.current ? myRef?.current?.parentNode as HTMLButtonElement : null;
@@ -15,7 +15,7 @@ export const ChannelHeaderButton = () => {
     };
 
     return (
-        <PlaybooksProductIcon
+        <DisasterIcon
             id='incidentIcon'
             ref={myRef}
             onClick={handleClick}
